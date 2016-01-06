@@ -1,61 +1,74 @@
-<h1>Calculadora de Imposto</h1>
+<div class="ui raised very padded text container segment calculadora">
+  <h2 class="ui header">Calculadora de ICMS</h2>
 
-<div class="form">
-  <div class="total">
-    <p> Total Bruto </p>
-    <%= text_field_tag "total" %>
-  </div>
+  <form class="ui form">
+    <div class="field">
+      <label> Estado de Origem </label>
+      <%= text_field_tag "uf_from", "SP", :class => "uf-from", :disabled => true %>
+    </div>
+    <div class="field">
+      <label> Total sem descontos </label>
+      <%= text_field_tag "total", "", :class => "total" %>
+    </div>
+    <div class="field">
+      <label> Total com desconto </label>
+      <%= text_field_tag "total-discount", "", :class => "total-discount" %>
+    </div>
+    <div class="two fields">
+      <div class="field">
+        <label><i class="flag us big"></i> Soma total de Importados </label>
+        <%= text_field_tag "imported-value", "", :class => "imported-value" %>
+      </div>
+      <div class="field">
+        <label><i class="flag br big"></i> Soma total de Nacionais </label>
+        <%= text_field_tag "national-value", "", :class => "national-value" %>
+      </div>
+    </div>
+    <div class="field">
+      <p> Estado de destino </p>
+      <select name="uf_to" id="uf_to" class="uf-to ui fluid dropdown">
+      	<option value="">Selecione</option>
+      	<option value="AC">AC</option>
+      	<option value="AL">AL</option>
+      	<option value="AM">AM</option>
+      	<option value="AP">AP</option>
+      	<option value="BA">BA</option>
+      	<option value="CE">CE</option>
+      	<option value="DF">DF</option>
+      	<option value="ES">ES</option>
+      	<option value="GO">GO</option>
+      	<option value="MA">MA</option>
+      	<option value="MG">MG</option>
+      	<option value="MS">MS</option>
+      	<option value="MT">MT</option>
+      	<option value="PA">PA</option>
+      	<option value="PB">PB</option>
+      	<option value="PE">PE</option>
+      	<option value="PI">PI</option>
+      	<option value="PR">PR</option>
+      	<option value="RJ">RJ</option>
+      	<option value="RN">RN</option>
+      	<option value="RS">RS</option>
+      	<option value="RO">RO</option>
+      	<option value="RR">RR</option>
+      	<option value="SC">SC</option>
+      	<option value="SE">SE</option>
+      	<option value="SP">SP</option>
+      	<option value="TO">TO</option>
+       </select>
+    </div>
+    <div class="field">
+      <label> Porcentagem de ICMS para o Estado de Destino </label>
+      <%= text_field_tag "quota", 40, :class => "quota", :disabled => true %>
+    </div>
+    <%= button_tag "Calcular", :type => 'button', :class => "calculate ui button" %>
+  </form>
+</div>
 
-  <div class="discount-total">
-    <p> Total com Desconto </p>
-    <%= text_field_tag "discount-total" %>
-  </div>
-
-  <div class="national-total">
-    <p> Total Nacional </p>
-    <%= text_field_tag "national-total" %>
-  </div>
-
-  <div class="imported-total">
-    <p> Total Importado </p>
-    <%= text_field_tag "imported-total" %>
-  </div>
-
-  <div class="UF">
-    <p> Estado </p>
-    <select name="uf" id="uf">
-    	<option value="">Selecione</option>
-    	<option value="AC">AC</option>
-    	<option value="AL">AL</option>
-    	<option value="AM">AM</option>
-    	<option value="AP">AP</option>
-    	<option value="BA">BA</option>
-    	<option value="CE">CE</option>
-    	<option value="DF">DF</option>
-    	<option value="ES">ES</option>
-    	<option value="GO">GO</option>
-    	<option value="MA">MA</option>
-    	<option value="MG">MG</option>
-    	<option value="MS">MS</option>
-    	<option value="MT">MT</option>
-    	<option value="PA">PA</option>
-    	<option value="PB">PB</option>
-    	<option value="PE">PE</option>
-    	<option value="PI">PI</option>
-    	<option value="PR">PR</option>
-    	<option value="RJ">RJ</option>
-    	<option value="RN">RN</option>
-    	<option value="RS">RS</option>
-    	<option value="RO">RO</option>
-    	<option value="RR">RR</option>
-    	<option value="SC">SC</option>
-    	<option value="SE">SE</option>
-    	<option value="SP">SP</option>
-    	<option value="TO">TO</option>
-     </select>
-  </div>
-
-  <div class="calculate-button">
-    <%= button_tag "Calcular" %>
+<div class="ui raised very padded text container segment">
+  <h1>Valor do GNRE:</h1>
+  <div class="ui massive label blue">
+    <span class="icon white">R$</span>
+    <span class="gnre-value">0,00</span>
   </div>
 </div>

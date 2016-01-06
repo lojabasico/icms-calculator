@@ -1,4 +1,4 @@
-$(function(){
+modulejs.define('tax', function() {
   var Tax = Backbone.Model.extend({
     defaults: function(){
       return{
@@ -9,4 +9,6 @@ $(function(){
       }
     }
   });
-});
+
+  return Tax;
+})

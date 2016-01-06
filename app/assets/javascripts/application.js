@@ -2,4 +2,9 @@
 //= require vendor/underscore
 //= require vendor/backbone
 //= require vendor/module
-//= require loader.js
+//= require loader
+//= require models/tax
+//= require helpers/index
+//= require collections/taxes
+//= require collection_instances/taxes
+//= require views/index
