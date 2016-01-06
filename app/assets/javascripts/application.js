@@ -4,6 +4,7 @@
 //= require vendor/module
 //= require loader
 //= require models/tax
+//= require models/gnre
 //= require helpers/index
 //= require collections/taxes
 //= require collection_instances/taxes
