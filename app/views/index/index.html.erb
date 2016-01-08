@@ -6,15 +6,11 @@
       <label> Estado de Origem </label>
       <%= text_field_tag "uf_from", "SP", :class => "uf-from", :disabled => true %>
     </div>
-    <div class="field">
-      <label> Total sem descontos </label>
-      <%= text_field_tag "total", "", :class => "total" %>
-    </div>
-    <div class="field">
-      <label> Total com desconto </label>
-      <%= text_field_tag "total-discount", "", :class => "total-discount" %>
-    </div>
-    <div class="two fields">
+    <div class="three fields">
+      <div class="field">
+        <label>Total </label>
+        <%= text_field_tag "total", "", :class => "total" %>
+      </div>
       <div class="field">
         <label><i class="flag us big"></i> Soma total de Importados </label>
         <%= text_field_tag "imported-value", "", :class => "imported-value" %>
@@ -67,8 +63,17 @@
 
 <div class="ui raised very padded text container segment">
   <h1>Valor do GNRE:</h1>
-  <div class="ui massive label blue">
-    <span class="icon white">R$</span>
+  <div class="ui massive label blue gnre">
+    <span class="icon white">gnre</span>
     <span class="gnre-value">0,00</span>
   </div>
+  <div class="ui massive label yellow fecp">
+    <span class="icon white">fecp</span>
+    <span class="value">0,00</span>
+  </div>
+  <div class="ui massive label red total">
+    <span class="icon white">total</span>
+    <span class="value">0,00</span>
+  </div>
+
 </div>

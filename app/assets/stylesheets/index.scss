@@ -3,3 +3,16 @@
 .calculadora {
   margin-top:40px !important;
 }
+
+.invisible {
+  display: none !important;
+}
+
+.gnre, .fecp, .total {
+  display:block !important;
+  margin:10px 0px !important;
+}
+
+.total {
+  margin:0px !important;
+}
